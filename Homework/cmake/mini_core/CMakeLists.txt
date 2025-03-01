@@ -15,11 +15,17 @@ if( NOT EIGEN3_INCLUDE_DIR )
      message( FATAL_ERROR "Please point the environment variable EIGEN3_INCLUDE_DIR to the include directory of your Eigen3 installation!")
 endif()
 
-
 # TODO invokes the routines to find a package called Eigen3
+find_package(Eigen3 REQUIRED)
 
 # TODO specify additional locations of header files
+include_directories(src)
+
+# TODO do the same for executables
+add_subdirectory(executables)
 
 # add project source code
 add_subdirectory(src)
-# TODO do the same for executables
+
+
+
